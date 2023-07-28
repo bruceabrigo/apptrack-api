@@ -1,14 +1,36 @@
 const mongoose = require('mongoose')
 
+// Define enum types for a dropdown menu
 
+// -------- Define Roles --------
+const isSubmitted = Object.freeze({
+	FullStack: 'Fullstack',
+	FrontEnd: 'Front-End',
+	BackEnd: 'Back-End',
+	SoftwareEngineer: 'Software Engineer'
+})
 
 const applicationSchema = new mongoose.Schema(
 	{
-		title: {
+		company: {
 			type: String,
 			required: true,
 		},
-		text: {
+		role: {
+			type: String,
+			required: true,
+		},
+		submitted: {
+			type: String,
+			enum: Object.values(isSubmitted),
+			required: true
+		},
+		// create a boolean for the submitted field (default to false - options should be (Y/N))
+		submitted: {
+			type: Boolean,
+			default: false,
+		},
+		status: {
 			type: String,
 			required: true,
 		},
@@ -23,4 +45,4 @@ const applicationSchema = new mongoose.Schema(
 	}
 )
 
-module.exports = mongoose.model('Applicaiton', applicationSchema)
+module.exports = mongoose.model('Application', applicationSchema)
