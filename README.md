@@ -11,7 +11,7 @@ This application uses token authentication.
 ### Users
 
 | VERB   | URI Pattern                      | Controller#Action     |
-| ****** | ******************************** | ********************* |
+| ------ | -------------------------------- | --------------------- |
 | POST   | `/sign-up`                       | `user#signup`         |
 | POST   | `/sign-in`                       | `user#signin`         |
 | PATCH  | `/change-password/`              | `users#updatepw`      |
@@ -20,7 +20,7 @@ This application uses token authentication.
 ##### Routes Table
 
 | VERB   | URI Pattern                      | Controller#Action      |
-| ****** | ******************************** | ********************** |
+| ------ | -------------------------------- | ---------------------- |
 | GET    | `/applications`                  | `applications#index`   |
 | GET    | `/applications/:id`              | `applications#show`    |
 | POST   | `/applications/`                 | `applications#create`  |

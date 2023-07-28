@@ -42,7 +42,12 @@ const applicationSchema = new mongoose.Schema(
 	},
 	{
 		timestamps: true,
+		// include virtuals to our model
+		toObject: {virtuals: true},
+		toJSON: {virtuals: true}
 	}
 )
+
+
 
 module.exports = mongoose.model('Application', applicationSchema)
